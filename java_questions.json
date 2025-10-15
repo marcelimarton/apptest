@@ -1,0 +1,872 @@
+[
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is Object-Oriented Programming (OOP)?",
+    "Answer": "Object-Oriented Programming is a programming paradigm based on the concept of objects, which can contain data and code: data in the form of fields (attributes), and code in the form of procedures (methods). OOP focuses on organizing software design around data (objects) rather than functions and logic."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What are the four main principles of OOP?",
+    "Answer": "The four main principles are: 1) Encapsulation - bundling data and methods that operate on that data, 2) Inheritance - creating new classes from existing ones, 3) Polymorphism - ability of objects to take different forms, and 4) Abstraction - hiding complex implementation details and showing only essential features."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is the difference between abstraction and encapsulation?",
+    "Answer": "Abstraction focuses on hiding complex implementation details and showing only essential features to the user, while encapsulation is about bundling data and methods that operate on that data together and restricting direct access to some components. Abstraction solves the problem at design level, encapsulation at implementation level."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is polymorphism and what are its types?",
+    "Answer": "Polymorphism is the ability of an object to take on many forms. The two main types are: 1) Compile-time polymorphism (method overloading) - resolved during compilation, and 2) Runtime polymorphism (method overriding) - resolved during runtime through dynamic method dispatch."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is inheritance and what are its advantages?",
+    "Answer": "Inheritance is a mechanism where a new class (subclass) derives properties and behavior from an existing class (superclass). Advantages include: code reusability, method overriding for polymorphism, establishing relationships between classes, and creating hierarchical classifications."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is the difference between abstract class and interface?",
+    "Answer": "Abstract classes can have both abstract and concrete methods, constructors, and instance variables, while interfaces (prior to Java 8) could only have abstract methods and constants. A class can extend only one abstract class but implement multiple interfaces. Abstract classes represent 'is-a' relationships, interfaces represent 'has-a' capabilities."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is method overloading vs method overriding?",
+    "Answer": "Method overloading occurs when multiple methods have the same name but different parameters (different signature), resolved at compile time. Method overriding occurs when a subclass provides a specific implementation of a method already defined in its superclass, same signature, resolved at runtime."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "Can you explain the 'super' keyword and its uses?",
+    "Answer": "The 'super' keyword is used to: 1) Refer to immediate parent class instance variables, 2) Invoke immediate parent class methods, 3) Invoke immediate parent class constructor using super(). It helps to differentiate between parent and child class members with same names."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is the 'this' keyword used for?",
+    "Answer": "The 'this' keyword is used to: 1) Refer to current class instance variables, 2) Invoke current class methods, 3) Invoke current class constructor using this(), 4) Pass as an argument in method or constructor call, 5) Return the current class instance from a method."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "OOP Concepts",
+    "Question": "What is composition in Java and how does it differ from inheritance?",
+    "Answer": "Composition is a 'has-a' relationship where one class contains a reference to another class, providing stronger coupling than inheritance. Unlike inheritance (is-a relationship), composition allows for more flexibility, doesn't break encapsulation, and supports dependency injection better."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Object Class & Methods",
+    "Question": "What methods are available in the Object class?",
+    "Answer": "The Object class provides: toString(), equals(), hashCode(), getClass(), clone(), finalize(), wait(), notify(), notifyAll(). These methods provide basic functionality common to all Java objects."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Object Class & Methods",
+    "Question": "What is the contract between equals() and hashCode()?",
+    "Answer": "The contract states: 1) If two objects are equal according to equals(), they must have the same hashCode, 2) If two objects have the same hashCode, they may not necessarily be equal. Violating this contract can cause issues in hash-based collections like HashMap and HashSet."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Object Class & Methods",
+    "Question": "Why is it important to override both equals() and hashCode() together?",
+    "Answer": "When equals() is overridden, hashCode() must also be overridden to maintain the contract. If only equals() is overridden, objects that are equal may have different hashCodes, causing issues in hash-based collections where objects might not be found even though they exist."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Object Class & Methods",
+    "Question": "What is the default implementation of equals() and hashCode()?",
+    "Answer": "The default equals() implementation uses == operator, comparing object references. The default hashCode() implementation typically converts the internal address of the object to an integer, but this is implementation-dependent and not guaranteed."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Object Class & Methods",
+    "Question": "How do you properly implement equals() method?",
+    "Answer": "A proper equals() implementation should: 1) Check for reference equality, 2) Check for null, 3) Check class type, 4) Compare significant fields for equality. It should be reflexive, symmetric, transitive, consistent, and handle null properly."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Strings",
+    "Question": "Why is String immutable in Java?",
+    "Answer": "String is immutable for: 1) Security - prevents modification of sensitive data, 2) Thread-safety - can be shared between threads safely, 3) Caching - enables string pooling for memory efficiency, 4) Hashcode caching - hash can be calculated once and reused."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Strings",
+    "Question": "What is the String Pool and how does it work?",
+    "Answer": "The String Pool is a special memory area in the heap where String literals are stored. When a String literal is created, JVM checks the pool first. If it exists, the reference is returned; if not, a new String is created in the pool. This saves memory by reusing common strings."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Strings",
+    "Question": "What is the difference between StringBuilder and StringBuffer?",
+    "Answer": "StringBuilder is not synchronized (not thread-safe) but faster, while StringBuffer is synchronized (thread-safe) but slower. StringBuilder should be used in single-threaded environments for better performance, StringBuffer in multi-threaded environments."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Strings",
+    "Question": "Why is char[] preferred over String for storing passwords?",
+    "Answer": "char[] is preferred because: 1) Strings are immutable and stay in the string pool until garbage collected, making them vulnerable in memory, 2) char[] can be explicitly cleared by setting elements to null or zero, 3) Reduces window of opportunity for malicious access to sensitive data."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Strings",
+    "Question": "How does string interning work?",
+    "Answer": "String interning is the process of storing only one copy of each distinct string value. The intern() method returns a canonical representation of the string object. If the string already exists in the pool, its reference is returned; otherwise, the string is added to the pool and its reference returned."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Memory Management & JVM",
+    "Question": "What are the main memory areas in JVM?",
+    "Answer": "The main JVM memory areas are: 1) Heap - for object storage, 2) Stack - for method calls and local variables, 3) Method Area (Metaspace) - for class metadata, 4) PC Registers - for thread execution points, 5) Native Method Stack - for native method calls."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Memory Management & JVM",
+    "Question": "What is the difference between Heap and Stack memory?",
+    "Answer": "Heap stores objects and instance variables, is shared across threads, and managed by garbage collection. Stack stores method calls, local variables, and references, is thread-specific, and automatically managed when methods enter/exit. Stack is faster but smaller than Heap."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Memory Management & JVM",
+    "Question": "What is Garbage Collection and how does it work?",
+    "Answer": "Garbage Collection is Java's automatic memory management system that reclaims memory occupied by objects no longer in use. It works by identifying unreachable objects (no references) and freeing their memory. Major GC algorithms include Mark-and-Sweep, Generational GC, and G1 GC."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Memory Management & JVM",
+    "Question": "What are the different Garbage Collectors available in Java?",
+    "Answer": "Main GCs include: 1) Serial GC - single-threaded for small apps, 2) Parallel GC - multi-threaded for throughput, 3) CMS (Concurrent Mark Sweep) - low pause times, 4) G1 GC - balanced for large heaps, 5) ZGC - ultra-low pause times, 6) Shenandoah - low pause times."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Memory Management & JVM",
+    "Question": "What is a memory leak in Java and how can it occur?",
+    "Answer": "A memory leak occurs when objects are no longer needed but still referenced, preventing GC from reclaiming memory. Common causes include: static collections holding object references, unclosed resources, listeners not removed, and inner classes holding outer class references."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Exceptions",
+    "Question": "What is the difference between checked and unchecked exceptions?",
+    "Answer": "Checked exceptions must be declared in the method signature or handled with try-catch (e.g., IOException). Unchecked exceptions (RuntimeException and its subclasses) don't require declaration or handling (e.g., NullPointerException). Checked exceptions represent recoverable conditions, unchecked represent programming errors."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Exceptions",
+    "Question": "What is the exception hierarchy in Java?",
+    "Answer": "Throwable is the root class. It has two main subclasses: 1) Error - serious system problems that applications shouldn't try to catch (e.g., OutOfMemoryError), and 2) Exception - conditions that applications might want to catch. Exception has RuntimeException (unchecked) and other exceptions (checked)."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Exceptions",
+    "Question": "What is the try-with-resources statement?",
+    "Answer": "Try-with-resources is a try statement that declares one or more resources (objects implementing AutoCloseable). These resources are automatically closed at the end of the statement, even if an exception occurs. It eliminates the need for explicit finally blocks to close resources."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Exceptions",
+    "Question": "When is the finally block not executed?",
+    "Answer": "The finally block may not execute when: 1) System.exit() is called, 2) JVM crashes, 3) The thread is killed, 4) An infinite loop occurs in the try block. In normal circumstances, finally always executes regardless of whether an exception was thrown or caught."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Exceptions",
+    "Question": "What are best practices for exception handling?",
+    "Answer": "Best practices include: 1) Catch specific exceptions rather than general ones, 2) Don't ignore exceptions, 3) Use checked exceptions for recoverable conditions, 4) Use unchecked exceptions for programming errors, 5) Include meaningful messages, 6) Clean up resources in finally or use try-with-resources."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Java Keywords & Modifiers",
+    "Question": "What is the difference between final, finally, and finalize?",
+    "Answer": "final is a modifier for classes (non-inheritable), methods (non-overridable), and variables (constants). finally is a block that always executes after try-catch. finalize is a method called by garbage collector before object destruction for cleanup."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Java Keywords & Modifiers",
+    "Question": "What does the volatile keyword do?",
+    "Answer": "volatile ensures variable visibility across threads and prevents instruction reordering. When a variable is declared volatile, any write to it is immediately visible to other threads, and reads always get the latest value. However, it doesn't provide atomicity for compound operations."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Java Keywords & Modifiers",
+    "Question": "What is the transient keyword used for?",
+    "Answer": "transient indicates that a field should not be serialized. When an object is serialized, transient fields are ignored. This is useful for fields that contain temporary or sensitive data that shouldn't be persisted."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Java Keywords & Modifiers",
+    "Question": "What are the access modifiers in Java and their scope?",
+    "Answer": "1) private - visible only within the declaring class, 2) default (package-private) - visible within the same package, 3) protected - visible within package and to subclasses, 4) public - visible to all classes. Access becomes more restrictive from public to private."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Java Keywords & Modifiers",
+    "Question": "What is static keyword and where can it be used?",
+    "Answer": "static indicates that a member belongs to the class rather than instances. It can be used with: 1) Variables - class-level storage, 2) Methods - can be called without creating instance, 3) Blocks - executed when class is loaded, 4) Nested classes - don't have access to instance members."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Advanced Core Concepts",
+    "Question": "What is type erasure in Generics?",
+    "Answer": "Type erasure is the process where generic type information is removed during compilation and replaced with their bounds or Object. This ensures backward compatibility with pre-generics code. At runtime, List<String> and List<Integer> both appear as raw List types."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Advanced Core Concepts",
+    "Question": "What is reflection and what are its uses?",
+    "Answer": "Reflection is the ability of a program to examine and modify its own structure and behavior at runtime. Uses include: 1) Introspecting classes, methods, fields, 2) Creating instances dynamically, 3) Invoking methods, 4) Accessing private members (with security manager permission), 5) Building frameworks and tools."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Advanced Core Concepts",
+    "Question": "What are the different types of nested classes?",
+    "Answer": "1) Static nested classes - don't have access to instance members, 2) Inner classes - have access to outer class instance members, 3) Local classes - defined within a method, 4) Anonymous classes - without name, declared and instantiated simultaneously. Each has different use cases and memory implications."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Advanced Core Concepts",
+    "Question": "What is the difference between static and instance initializer blocks?",
+    "Answer": "Static initializer blocks run when the class is loaded, used to initialize static variables. Instance initializer blocks run before constructors when an instance is created, used to initialize instance variables. Both can contain multiple statements and are executed in order of appearance."
+  },
+  {
+    "Category": "Core Java",
+    "Subcategory": "Advanced Core Concepts",
+    "Question": "What is the instanceof operator and how does it work?",
+    "Answer": "instanceof checks if an object is an instance of a specific class or interface. It returns true if the object is an instance of the specified type or its subclasses/interfaces. It's useful for type checking before casting and helps avoid ClassCastException."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "List & Basic Collections",
+    "Question": "What is the difference between ArrayList and LinkedList?",
+    "Answer": "ArrayList uses a dynamic array, providing fast random access (O(1)) but slow insertions/deletions (O(n)) in the middle. LinkedList uses a doubly linked list, providing fast insertions/deletions (O(1)) but slow random access (O(n)). ArrayList is better for read-heavy operations, LinkedList for frequent modifications."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "List & Basic Collections",
+    "Question": "What is the difference between ArrayList and Vector?",
+    "Answer": "ArrayList is not synchronized (not thread-safe) and performs better in single-threaded environments. Vector is synchronized (thread-safe) but has performance overhead. ArrayList is generally preferred; for thread-safe needs, use Collections.synchronizedList() or CopyOnWriteArrayList."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "List & Basic Collections",
+    "Question": "How does ArrayList resize itself when capacity is exceeded?",
+    "Answer": "When ArrayList capacity is exceeded, it creates a new array with 50% more capacity (newCapacity = oldCapacity + (oldCapacity >> 1)), copies all elements to the new array, and discards the old array. This amortized cost makes add operations O(1) on average."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Set Interface",
+    "Question": "What is the difference between HashSet, LinkedHashSet, and TreeSet?",
+    "Answer": "HashSet uses hashing, unordered, O(1) operations. LinkedHashSet maintains insertion order, O(1) operations. TreeSet maintains sorted order using Red-Black tree, O(log n) operations. HashSet is fastest, LinkedHashSet preserves order, TreeSet maintains sorting."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Set Interface",
+    "Question": "How is HashSet implemented internally?",
+    "Answer": "HashSet is implemented using HashMap internally. Each element in HashSet is stored as a key in HashMap with a dummy object as value. The hashing mechanism and collision handling are delegated to the underlying HashMap implementation."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Map Interface",
+    "Question": "How does HashMap work internally?",
+    "Answer": "HashMap uses an array of buckets (nodes). When putting a key-value pair: 1) hashCode() of key determines bucket, 2) If bucket is empty, store entry, 3) If collision occurs, uses linked list (Java 7) or tree (Java 8+) in bucket. Load factor (default 0.75) determines when to resize."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Map Interface",
+    "Question": "What is the difference between HashMap and ConcurrentHashMap?",
+    "Answer": "HashMap is not thread-safe, ConcurrentHashMap is thread-safe with better performance than synchronized collections. ConcurrentHashMap uses segment locking or CAS operations, allowing concurrent reads and limited concurrent writes without full synchronization."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Map Interface",
+    "Question": "What is the difference between HashMap and HashTable?",
+    "Answer": "HashMap is not synchronized, allows one null key and multiple null values. HashTable is synchronized, doesn't allow null keys or values. HashMap is generally preferred; for thread-safe needs, use ConcurrentHashMap instead of HashTable."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Map Interface",
+    "Question": "What is fail-fast and fail-safe iterator?",
+    "Answer": "Fail-fast iterators (in HashMap, ArrayList) throw ConcurrentModificationException if collection is modified during iteration. Fail-safe iterators (in ConcurrentHashMap, CopyOnWriteArrayList) work on a copy of collection and don't throw exceptions, but may not reflect latest changes."
+  },
+  {
+    "Category": "Collections Framework",
+    "Subcategory": "Iteration & Algorithms",
+    "Question": "What is the difference between Iterator and ListIterator?",
+    "Answer": "Iterator can traverse forward only and remove elements. ListIterator (for List implementations) can traverse both forward and backward, add/modify elements, and get current position. ListIterator provides more functionality but is only available for List collections."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Thread Basics",
+    "Question": "What is the difference between process and thread?",
+    "Answer": "A process is an independent execution unit with its own memory space. A thread is a lightweight subunit within a process that shares the process's memory and resources. Threads are cheaper to create and context switch, and can communicate more easily through shared memory."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Thread Basics",
+    "Question": "What are the different ways to create threads?",
+    "Answer": "1) Extend Thread class and override run() method, 2) Implement Runnable interface and pass to Thread constructor, 3) Implement Callable interface for threads that return results, 4) Use ExecutorService to manage thread pools. Implementing Runnable is generally preferred over extending Thread."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Thread Basics",
+    "Question": "What is the difference between start() and run() methods?",
+    "Answer": "start() creates a new thread and calls run() method in that new thread. run() executes in the current thread without creating a new thread. Calling run() directly defeats the purpose of multithreading and executes the code sequentially."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Thread Basics",
+    "Question": "What are the thread states in Java?",
+    "Answer": "Thread states are: 1) NEW - created but not started, 2) RUNNABLE - executing or ready to execute, 3) BLOCKED - waiting for monitor lock, 4) WAITING - waiting indefinitely for another thread, 5) TIMED_WAITING - waiting for specified time, 6) TERMINATED - execution completed."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Synchronization",
+    "Question": "What is synchronization and why is it needed?",
+    "Answer": "Synchronization is the coordination of thread access to shared resources to prevent race conditions and ensure data consistency. It's needed when multiple threads access and modify shared data concurrently, to maintain data integrity and prevent unpredictable behavior."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Synchronization",
+    "Question": "What is deadlock and how can it be prevented?",
+    "Answer": "Deadlock occurs when two or more threads wait indefinitely for each other to release locks. Prevention strategies: 1) Avoid nested locks, 2) Use lock ordering, 3) Use tryLock() with timeout, 4) Use deadlock detection algorithms, 5) Minimize lock scope and duration."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Synchronization",
+    "Question": "What is the difference between wait() and sleep()?",
+    "Answer": "wait() releases the lock and waits for notification, can be woken by notify()/notifyAll(). sleep() doesn't release the lock and waits for specified time, can't be woken early. wait() is used for inter-thread communication, sleep() for timing operations."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Synchronization",
+    "Question": "What is the difference between synchronized and ReentrantLock?",
+    "Answer": "synchronized is built-in, simpler, automatically releases lock. ReentrantLock is more flexible with features like: tryLock(), fair locking, multiple condition variables, lock interruption. ReentrantLock provides more control but requires explicit lock management."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Concurrency Utilities",
+    "Question": "What is Executor framework and why use it?",
+    "Answer": "Executor framework provides a higher-level replacement for working with threads directly. It manages thread creation, pooling, and task execution. Benefits include: better resource management, reduced thread creation overhead, improved performance, and simplified concurrent programming."
+  },
+  {
+    "Category": "Multithreading",
+    "Subcategory": "Concurrency Utilities",
+    "Question": "What is the difference between Callable and Runnable?",
+    "Answer": "Runnable represents a task that doesn't return a result and can't throw checked exceptions. Callable represents a task that returns a result and can throw checked exceptions. Callable is used with ExecutorService's submit() method which returns a Future."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Lambda & Functional Interfaces",
+    "Question": "What is a functional interface?",
+    "Answer": "A functional interface is an interface with exactly one abstract method (SAM - Single Abstract Method). It can have multiple default or static methods. Examples include Runnable, Callable, Comparator, and the new java.util.function interfaces like Predicate, Function, Consumer, Supplier."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Lambda & Functional Interfaces",
+    "Question": "What are lambda expressions?",
+    "Answer": "Lambda expressions are anonymous functions that provide a concise way to represent instances of functional interfaces. They enable functional programming in Java and reduce boilerplate code. Syntax: (parameters) -> expression or (parameters) -> { statements }."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Lambda & Functional Interfaces",
+    "Question": "What are method references?",
+    "Answer": "Method references are shorthand notation for lambda expressions that call existing methods. Types include: 1) Static method - Class::staticMethod, 2) Instance method - instance::method, 3) Arbitrary object - Class::instanceMethod, 4) Constructor - Class::new."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API",
+    "Question": "What is Stream API and how does it differ from Collections?",
+    "Answer": "Stream API provides a functional approach to process sequences of elements. Unlike Collections which store data, Streams process data through a pipeline of operations. Streams are lazy (process elements on demand), can be infinite, and support parallel processing without explicit threading."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API",
+    "Question": "What is the difference between intermediate and terminal operations?",
+    "Answer": "Intermediate operations (filter, map, sorted) transform streams and return new streams, are lazy and don't execute until terminal operation is called. Terminal operations (collect, forEach, reduce) produce results or side effects, trigger stream processing, and close the stream."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API",
+    "Question": "What is the difference between map() and flatMap()?",
+    "Answer": "map() transforms each element to another element (1:1 mapping). flatMap() transforms each element to a stream and flattens all streams into one (1:n mapping). Use map() for simple transformations, flatMap() when each element maps to multiple elements."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Core",
+    "Question": "What is Dependency Injection?",
+    "Answer": "Dependency Injection is a design pattern where objects receive their dependencies from an external source rather than creating them internally. This promotes loose coupling, testability, and flexibility. Spring provides DI through constructor, setter, or field injection."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Core",
+    "Question": "What is Inversion of Control (IoC) container?",
+    "Answer": "IoC container is the core of Spring framework that manages object creation, configuration, and lifecycle. It inverts the control of object creation from application code to the container. ApplicationContext is the Spring IoC container that provides advanced enterprise features."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Core",
+    "Question": "What are the different bean scopes in Spring?",
+    "Answer": "Spring bean scopes: 1) singleton - one instance per container (default), 2) prototype - new instance for each request, 3) request - one instance per HTTP request, 4) session - one instance per HTTP session, 5) application - one instance per ServletContext, 6) websocket - one instance per WebSocket session."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Core",
+    "Question": "What is the difference between @Component, @Service, @Repository, and @Controller?",
+    "Answer": "All are stereotypes for Spring-managed beans. @Component is generic, @Service for business layer, @Repository for data access layer (auto-translates exceptions), @Controller for web layer. The specialization helps in layering and provides additional semantics."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Boot",
+    "Question": "What are the main advantages of Spring Boot?",
+    "Answer": "Spring Boot advantages: 1) Auto-configuration reduces boilerplate code, 2) Embedded servers for easy deployment, 3) Production-ready features (metrics, health checks), 4) No XML configuration, 5) Simplified dependency management with starters, 6) Faster development and deployment."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Boot",
+    "Question": "What does @SpringBootApplication annotation do?",
+    "Answer": "@SpringBootApplication combines three annotations: 1) @Configuration - marks class as configuration source, 2) @ComponentScan - enables component scanning in current package, 3) @EnableAutoConfiguration - enables Spring Boot's auto-configuration mechanism. It's the main annotation for Spring Boot applications."
+  },
+  {
+    "Category": "Databases",
+    "Subcategory": "SQL Fundamentals",
+    "Question": "What is ACID properties in database transactions?",
+    "Answer": "ACID properties: 1) Atomicity - all operations succeed or all fail, 2) Consistency - transaction brings database from one valid state to another, 3) Isolation - concurrent transactions don't interfere, 4) Durability - committed transactions persist even after system failure."
+  },
+  {
+    "Category": "Databases",
+    "Subcategory": "SQL Fundamentals",
+    "Question": "What is the difference between WHERE and HAVING clauses?",
+    "Answer": "WHERE filters rows before grouping, can't use aggregate functions. HAVING filters groups after GROUP BY, can use aggregate functions. WHERE is applied first to reduce data, then grouping, then HAVING filters the grouped results."
+  },
+  {
+    "Category": "Databases",
+    "Subcategory": "SQL Fundamentals",
+    "Question": "What are database indexes and when should they be used?",
+    "Answer": "Indexes are data structures that improve data retrieval speed. Use indexes on: 1) Frequently queried columns, 2) Columns used in WHERE, JOIN, ORDER BY clauses, 3) Primary keys and foreign keys. Avoid on: 1) Frequently updated columns, 2) Tables with few records, 3) Columns with low cardinality."
+  },
+  {
+    "Category": "Databases",
+    "Subcategory": "SQL Fundamentals",
+    "Question": "What is the difference between INNER JOIN and LEFT JOIN?",
+    "Answer": "INNER JOIN returns only matching rows from both tables. LEFT JOIN returns all rows from left table and matching rows from right table (NULL for non-matching). Use INNER JOIN when you need only matches, LEFT JOIN when you need all records from left table regardless of matches."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "SOLID Principles",
+    "Question": "What are the SOLID principles?",
+    "Answer": "SOLID principles: 1) Single Responsibility - class should have one reason to change, 2) Open/Closed - open for extension, closed for modification, 3) Liskov Substitution - subclasses should be substitutable for base classes, 4) Interface Segregation - many specific interfaces better than one general, 5) Dependency Inversion - depend on abstractions, not concretions."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Creational Patterns",
+    "Question": "What is Singleton pattern and its implementation concerns?",
+    "Answer": "Singleton ensures a class has only one instance and provides global access. Implementation concerns: 1) Thread safety in creation, 2) Serialization/deserialization issues, 3) Reflection attacks, 4) Classloader issues in distributed environments. Consider enum or double-checked locking with volatile for safe implementation."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Structural Patterns",
+    "Question": "What is the difference between Adapter and Facade patterns?",
+    "Answer": "Adapter makes incompatible interfaces work together, focuses on interface conversion. Facade provides a simplified interface to a complex subsystem, focuses on ease of use. Adapter resolves interface incompatibilities, Facade simplifies complex systems for clients."
+  },
+  {
+    "Category": "Microservices",
+    "Subcategory": "Architecture",
+    "Question": "What are the characteristics of microservices architecture?",
+    "Answer": "Microservices characteristics: 1) Loosely coupled services, 2) Independently deployable, 3) Organized around business capabilities, 4) Owned by small teams, 5) Technology diversity, 6) Decentralized data management, 7) Infrastructure automation, 8) Design for failure."
+  },
+  {
+    "Category": "Microservices",
+    "Subcategory": "Patterns",
+    "Question": "What is Circuit Breaker pattern?",
+    "Answer": "Circuit Breaker prevents cascading failures by stopping requests to a failing service. States: 1) Closed - normal operation, 2) Open - requests fail immediately, 3) Half-Open - limited requests to test recovery. Gives failing services time to recover and provides fallback mechanisms."
+  },
+  {
+    "Category": "Microservices",
+    "Subcategory": "Patterns",
+    "Question": "What is API Gateway pattern?",
+    "Answer": "API Gateway is a single entry point that handles request routing, composition, and protocol translation for multiple microservices. Benefits: 1) Simplified client code, 2) Reduced round trips, 3) Cross-cutting concerns (auth, logging, rate limiting), 4) Protocol translation, 5) Load balancing."
+  },
+  {
+    "Category": "AWS",
+    "Subcategory": "Compute",
+    "Question": "What is the difference between EC2 and Lambda?",
+    "Answer": "EC2 provides virtual servers with full control over OS and runtime, suitable for long-running applications. Lambda is serverless compute service that runs code in response to events, auto-scales, and charges only for compute time. EC2 for predictable workloads, Lambda for event-driven, sporadic workloads."
+  },
+  {
+    "Category": "AWS",
+    "Subcategory": "Storage",
+    "Question": "What are the different S3 storage classes?",
+    "Answer": "S3 storage classes: 1) Standard - frequently accessed data, 2) Intelligent-Tiering - auto-optimizes costs, 3) Standard-IA - infrequently accessed, 4) One Zone-IA - rarely accessed with lower redundancy, 5) Glacier - archival with retrieval times, 6) Glacier Deep Archive - lowest cost for long-term archival."
+  },
+  {
+    "Category": "System Design",
+    "Subcategory": "Scalability",
+    "Question": "What is the difference between horizontal and vertical scaling?",
+    "Answer": "Vertical scaling adds more power (CPU, RAM) to existing machines. Horizontal scaling adds more machines to the system. Vertical scaling has limits and single point of failure, horizontal scaling provides better fault tolerance and can scale almost infinitely but adds complexity."
+  },
+  {
+    "Category": "System Design",
+    "Subcategory": "Caching",
+    "Question": "What are different caching strategies?",
+    "Answer": "Caching strategies: 1) Cache-aside - application manages cache, 2) Read-through - cache manages reads, 3) Write-through - write to cache and DB simultaneously, 4) Write-behind - write to cache, async write to DB, 5) Write-around - write to DB, cache on read. Choose based on read/write patterns and consistency requirements."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What is the difference between Collection.stream() and Collection.parallelStream()?",
+    "Answer": "Collection.stream() creates a sequential stream that processes elements in order using a single thread. Collection.parallelStream() creates a parallel stream that processes elements concurrently using multiple threads from the ForkJoinPool. Parallel streams can improve performance for CPU-intensive operations on large datasets but add overhead and require thread-safe operations."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "How does the reduce() operation work in Streams?",
+    "Answer": "reduce() combines elements of a stream to produce a single result. There are three variants: 1) Optional<T> reduce(BinaryOperator<T> accumulator) - uses first element as identity, 2) T reduce(T identity, BinaryOperator<T> accumulator) - explicit identity value, 3) <U> U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner) - for parallel streams with different input/output types. Example: list.stream().reduce(0, (a,b) -> a + b) sums integers."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What is the purpose of Collectors class and name commonly used collectors?",
+    "Answer": "Collectors class provides implementations of Collector interface for common reduction operations. Common collectors: toList(), toSet(), toMap(), toCollection(), joining(), counting(), summingInt(), averagingDouble(), groupingBy(), partitioningBy(), reducing(). Example: list.stream().collect(Collectors.groupingBy(Person::getCity)) groups people by city."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What is the difference between findFirst() and findAny()?",
+    "Answer": "findFirst() returns the first element of the stream (deterministic in sequential streams). findAny() returns any element (non-deterministic, especially in parallel streams). findFirst() is useful when order matters, findAny() is faster in parallel streams when any element satisfies the condition."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "How do you handle checked exceptions in Stream operations?",
+    "Answer": "Stream operations don't allow checked exceptions in lambda expressions. Solutions: 1) Wrap checked exception in RuntimeException, 2) Use a wrapper method that handles the exception, 3) Use a custom FunctionalInterface that allows exceptions. Example: list.stream().map(item -> { try { return process(item); } catch (IOException e) { throw new RuntimeException(e); } })"
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What is the difference between Stream.peek() and Stream.forEach()?",
+    "Answer": "peek() is an intermediate operation used for debugging - it performs an action on each element without modifying the stream and returns a new stream. forEach() is a terminal operation that performs an action but doesn't return anything and terminates the stream. peek() is useful for logging during stream processing."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "How can you create infinite streams and what are their use cases?",
+    "Answer": "Infinite streams can be created using Stream.generate() and Stream.iterate(). Stream.generate(Supplier) generates infinite stream using the supplier. Stream.iterate(seed, UnaryOperator) generates infinite stream by applying the operator repeatedly. Use cases: generating random numbers, mathematical sequences, simulation data. Always use limit() with infinite streams to avoid infinite processing."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What are primitive specialized streams (IntStream, LongStream, DoubleStream) and their advantages?",
+    "Answer": "Primitive specialized streams avoid boxing/unboxing overhead and provide additional methods for numerical operations. IntStream, LongStream, DoubleStream offer methods like sum(), average(), range(), rangeClosed(), summaryStatistics(). Example: IntStream.range(1, 10).sum() is more efficient than Stream.of(1,2,3,...).mapToInt(i -> i).sum()."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "How does Stream.distinct() work and what are its performance implications?",
+    "Answer": "distinct() returns a stream with duplicate elements removed based on equals() method. For ordered streams, it preserves encounter order. For parallel streams, it's expensive as it requires coordination between threads. Performance is O(n) but can be poor for large streams. Consider using Set for better distinct operations on large datasets."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Advanced",
+    "Question": "What are stateful and stateless intermediate operations in Streams?",
+    "Answer": "Stateless operations (map, filter, flatMap) process each element independently without storing state. Stateful operations (distinct, sorted, limit) may need to process multiple elements and maintain state. Stateful operations can have performance implications in parallel streams and may break with infinite streams."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Practical Examples",
+    "Question": "How would you convert a List of Strings to a Map with string length as key and list of strings as value?",
+    "Answer": "Using Collectors.groupingBy(): List<String> words = Arrays.asList(\"apple\", \"banana\", \"cherry\", \"date\"); Map<Integer, List<String>> result = words.stream().collect(Collectors.groupingBy(String::length)); This creates: {5=[apple], 6=[banana, cherry], 4=[date]}"
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Practical Examples",
+    "Question": "How to find the second highest salary from a list of Employee objects?",
+    "Answer": "List<Employee> employees = ...; Optional<Double> secondHighest = employees.stream().map(Employee::getSalary).distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst(); This sorts salaries in descending order, skips the first (highest), and gets the second."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Practical Examples",
+    "Question": "How to partition a list of numbers into even and odd using Streams?",
+    "Answer": "List<Integer> numbers = Arrays.asList(1,2,3,4,5,6); Map<Boolean, List<Integer>> partitioned = numbers.stream().collect(Collectors.partitioningBy(n -> n % 2 == 0)); This creates: {false=[1,3,5], true=[2,4,6]}"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Creational Patterns - Examples",
+    "Question": "Implement Singleton pattern with double-checked locking and volatile keyword",
+    "Answer": "public class Singleton { private static volatile Singleton instance; private Singleton() {} public static Singleton getInstance() { if (instance == null) { synchronized (Singleton.class) { if (instance == null) { instance = new Singleton(); } } } return instance; }} The volatile prevents instruction reordering, ensuring thread-safe lazy initialization."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Creational Patterns - Examples",
+    "Question": "Implement Builder pattern for a complex object with example",
+    "Answer": "public class Computer { private String CPU; private String RAM; // ... public static class Builder { private String CPU; public Builder withCPU(String cpu) { this.CPU = cpu; return this; } public Computer build() { return new Computer(this); } } private Computer(Builder builder) { this.CPU = builder.CPU; // ... } } Usage: Computer comp = new Computer.Builder().withCPU(\"Intel\").build();"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Creational Patterns - Examples",
+    "Question": "Implement Factory Method pattern with example",
+    "Answer": "public abstract class Vehicle { public abstract void drive(); } public class Car extends Vehicle { public void drive() { System.out.println(\"Driving car\"); } } public class Bike extends Vehicle { public void drive() { System.out.println(\"Riding bike\"); } } public class VehicleFactory { public Vehicle getVehicle(String type) { switch(type) { case \"car\": return new Car(); case \"bike\": return new Bike(); default: throw new IllegalArgumentException(); } } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Structural Patterns - Examples",
+    "Question": "Implement Adapter pattern to make incompatible interfaces work together",
+    "Answer": "// Existing interface public interface MediaPlayer { void play(String audioType, String fileName); } // Advanced interface public interface AdvancedMediaPlayer { void playVlc(String fileName); void playMp4(String fileName); } // Adapter public class MediaAdapter implements MediaPlayer { AdvancedMediaPlayer advancedPlayer; public MediaAdapter(String audioType) { if(audioType.equalsIgnoreCase(\"vlc\")) { advancedPlayer = new VlcPlayer(); } else if(audioType.equalsIgnoreCase(\"mp4\")) { advancedPlayer = new Mp4Player(); } } public void play(String audioType, String fileName) { if(audioType.equalsIgnoreCase(\"vlc\")) { advancedPlayer.playVlc(fileName); } else if(audioType.equalsIgnoreCase(\"mp4\")) { advancedPlayer.playMp4(fileName); } } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Structural Patterns - Examples",
+    "Question": "Implement Decorator pattern to add functionality dynamically",
+    "Answer": "public interface Coffee { double getCost(); String getDescription(); } public class SimpleCoffee implements Coffee { public double getCost() { return 1.0; } public String getDescription() { return \"Simple coffee\"; } } public abstract class CoffeeDecorator implements Coffee { protected Coffee decoratedCoffee; public CoffeeDecorator(Coffee coffee) { this.decoratedCoffee = coffee; } public double getCost() { return decoratedCoffee.getCost(); } public String getDescription() { return decoratedCoffee.getDescription(); } } public class MilkDecorator extends CoffeeDecorator { public MilkDecorator(Coffee coffee) { super(coffee); } public double getCost() { return super.getCost() + 0.5; } public String getDescription() { return super.getDescription() + \", milk\"; } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Behavioral Patterns - Examples",
+    "Question": "Implement Observer pattern for event notification system",
+    "Answer": "public interface Observer { void update(String message); } public interface Subject { void registerObserver(Observer o); void removeObserver(Observer o); void notifyObservers(); } public class NewsAgency implements Subject { private List<Observer> observers = new ArrayList<>(); private String news; public void setNews(String news) { this.news = news; notifyObservers(); } public void registerObserver(Observer o) { observers.add(o); } public void removeObserver(Observer o) { observers.remove(o); } public void notifyObservers() { for (Observer o : observers) { o.update(news); } } } public class NewsChannel implements Observer { private String news; public void update(String news) { this.news = news; System.out.println(\"News updated: \" + news); } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Behavioral Patterns - Examples",
+    "Question": "Implement Strategy pattern for different payment methods",
+    "Answer": "public interface PaymentStrategy { void pay(int amount); } public class CreditCardStrategy implements PaymentStrategy { private String cardNumber; public CreditCardStrategy(String cardNumber) { this.cardNumber = cardNumber; } public void pay(int amount) { System.out.println(amount + \" paid with credit card \" + cardNumber); } } public class PayPalStrategy implements PaymentStrategy { private String email; public PayPalStrategy(String email) { this.email = email; } public void pay(int amount) { System.out.println(amount + \" paid using PayPal account \" + email); } } public class ShoppingCart { private PaymentStrategy paymentStrategy; public void setPaymentStrategy(PaymentStrategy strategy) { this.paymentStrategy = strategy; } public void checkout(int amount) { paymentStrategy.pay(amount); } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Behavioral Patterns - Examples",
+    "Question": "Implement Command pattern for undo/redo functionality",
+    "Answer": "public interface Command { void execute(); void undo(); } public class TextEditor { private StringBuilder text = new StringBuilder(); public void addText(String newText) { text.append(newText); } public void deleteText(int length) { text.setLength(text.length() - length); } public String getText() { return text.toString(); } } public class AddTextCommand implements Command { private TextEditor editor; private String text; public AddTextCommand(TextEditor editor, String text) { this.editor = editor; this.text = text; } public void execute() { editor.addText(text); } public void undo() { editor.deleteText(text.length()); } } public class CommandManager { private Stack<Command> history = new Stack<>(); public void executeCommand(Command cmd) { cmd.execute(); history.push(cmd); } public void undo() { if (!history.isEmpty()) { Command cmd = history.pop(); cmd.undo(); } } }"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Architectural Patterns",
+    "Question": "What is MVC pattern and how is it implemented in Spring?",
+    "Answer": "MVC (Model-View-Controller) separates application into: Model (data and business logic), View (presentation layer), Controller (handles user input). In Spring: @Controller classes handle requests, return ModelAndView or response body. Model data is stored in ModelMap. View resolvers (like Thymeleaf, JSP) render the response. @RestController combines @Controller and @ResponseBody for REST APIs."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Architectural Patterns",
+    "Question": "What is Repository pattern and its implementation with Spring Data JPA?",
+    "Answer": "Repository pattern mediates between domain and data mapping layers. Spring Data JPA provides Repository interface: public interface UserRepository extends JpaRepository<User, Long> { List<User> findByLastName(String lastName); @Query(\"SELECT u FROM User u WHERE u.email = :email\") User findByEmail(@Param(\"email\") String email); } Spring automatically implements the interface, provides CRUD operations, and generates queries from method names."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Concurrency Patterns",
+    "Question": "What is Producer-Consumer pattern and how to implement it with BlockingQueue?",
+    "Answer": "Producer-Consumer pattern solves coordination between threads producing and consuming data. Implementation with BlockingQueue: BlockingQueue<Item> queue = new ArrayBlockingQueue<>(10); // Producer thread: queue.put(item); // blocks if full // Consumer thread: Item item = queue.take(); // blocks if empty This handles thread coordination automatically, providing backpressure when producer outpaces consumer."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Concurrency Patterns",
+    "Question": "What is Thread Pool pattern and its implementation with ExecutorService?",
+    "Answer": "Thread Pool maintains a pool of worker threads to execute tasks. Implementation: ExecutorService executor = Executors.newFixedThreadPool(5); for (int i = 0; i < 10; i++) { executor.execute(() -> { // task logic }); } executor.shutdown(); Benefits: reuses threads, controls resource usage, manages thread lifecycle. Different types: FixedThreadPool, CachedThreadPool, ScheduledThreadPool, ForkJoinPool."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Anti-Patterns",
+    "Question": "What is God Object anti-pattern and how to avoid it?",
+    "Answer": "God Object is a class that knows too much or does too much, violating Single Responsibility Principle. Symptoms: thousands of lines, many dependencies, frequent changes. Solution: Apply SRP, break into smaller focused classes, use composition over inheritance, apply design patterns like Strategy, Factory, Decorator to distribute responsibilities."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Anti-Patterns",
+    "Question": "What is Circular Dependency and how to resolve it in Spring?",
+    "Answer": "Circular Dependency occurs when two or more beans depend on each other directly or indirectly. In Spring, it causes BeanCurrentlyInCreationException. Solutions: 1) Use setter injection instead of constructor injection, 2) Use @Lazy on one dependency, 3) Refactor code to remove circular dependency, 4) Use ApplicationContextAware to get bean programmatically, 5) Use @PostConstruct for initialization logic."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Performance",
+    "Question": "When should you use parallel streams and what are the considerations?",
+    "Answer": "Use parallel streams for: 1) Large datasets (N > 10,000), 2) CPU-intensive operations, 3) Operations that can be easily parallelized. Considerations: 1) Overhead of thread management, 2) Need thread-safe operations, 3) Spliterator quality affects performance, 4) Stateful operations (sorted, distinct) perform poorly, 5) I/O operations don't benefit from parallelism. Always measure performance before using parallel streams."
+  },
+  {
+    "Category": "Java 8+",
+    "Subcategory": "Stream API - Performance",
+    "Question": "How to optimize stream operations for better performance?",
+    "Answer": "Optimization techniques: 1) Use primitive streams to avoid boxing, 2) Use method references instead of lambdas, 3) Prefer filter() early to reduce elements, 4) Use distinct() on smaller datasets, 5) Avoid stateful operations in parallel streams, 6) Use collection-specific methods (Collection.removeIf) when possible, 7) Consider using traditional loops for simple operations on small collections."
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Microservices Patterns",
+    "Question": "What is Circuit Breaker pattern and implement it with Resilience4j",
+    "Answer": "Circuit Breaker prevents cascading failures. Resilience4j implementation: CircuitBreakerConfig config = CircuitBreakerConfig.custom() .failureRateThreshold(50) .waitDurationInOpenState(Duration.ofMillis(1000)) .build(); CircuitBreaker circuitBreaker = CircuitBreaker.of(\"serviceName\", config); CheckedFunction0<String> decoratedSupplier = CircuitBreaker.decorateCheckedSupplier(circuitBreaker, () -> service.call()); Try.of(decoratedSupplier).recover(throwable -> \"fallback\");"
+  },
+  {
+    "Category": "Design Patterns",
+    "Subcategory": "Microservices Patterns",
+    "Question": "What is API Composition pattern and when to use it?",
+    "Answer": "API Composition pattern aggregates data from multiple services in one API call. Use when: 1) Client needs data from multiple services, 2) Services are loosely coupled, 3) No single service owns all required data. Implementation: Create API composer service that calls multiple services in parallel (using CompletableFuture), aggregates results, and returns combined response. Consider using caching and timeout strategies."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Security",
+    "Question": "What is the difference between authentication and authorization in Spring Security?",
+    "Answer": "Authentication is the process of verifying who a user is (e.g., username/password, tokens), while authorization determines what an authenticated user is allowed to do (e.g., access controls, permissions). Spring Security handles both through its security filter chain."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Security",
+    "Question": "What are the main components of Spring Security?",
+    "Answer": "Key components include: SecurityContext (holds authentication data), AuthenticationManager (handles authentication), UserDetailsService (loads user-specific data), SecurityFilterChain (filters for security operations), and GrantedAuthority (represents user permissions)."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Security",
+    "Question": "How do you configure method-level security in Spring?",
+    "Answer": "Using annotations: @EnableMethodSecurity on configuration class, then @PreAuthorize, @PostAuthorize, @PreFilter, @PostFilter on methods. Example: @PreAuthorize('hasRole('ADMIN')') public void deleteUser()."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Core",
+    "Question": "What is dependency injection and how does Spring implement it?",
+    "Answer": "Dependency Injection is a design pattern where objects receive their dependencies from an external source rather than creating them internally. Spring implements DI through its IoC container using constructor injection, setter injection, or field injection with @Autowired."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Boot",
+    "Question": "What is Spring Boot and how does it differ from Spring Framework?",
+    "Answer": "Spring Boot is an extension of Spring Framework that simplifies configuration and deployment. It provides auto-configuration, embedded servers, and starter dependencies, reducing boilerplate code compared to traditional Spring applications."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "What is the difference between intermediate and terminal operations in Java Streams?",
+    "Answer": "Intermediate operations (filter, map, sorted) are lazy and return a new stream, while terminal operations (collect, forEach, reduce) are eager, produce a result or side-effect, and close the stream. Intermediate operations aren't executed until a terminal operation is called."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you convert a List of objects to a Map using Streams?",
+    "Answer": "Using Collectors.toMap(): list.stream().collect(Collectors.toMap(Object::getId, Function.identity())) or with merge function: Collectors.toMap(KeyMapper, ValueMapper, (existing, replacement) -> existing) for handling duplicate keys."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "What is the purpose of the flatMap() operation in Java Streams?",
+    "Answer": "flatMap() transforms each element into a stream and then flattens all streams into a single stream. It's useful when each element can produce multiple values, like flattening List<List<String>> to List<String> or extracting nested collections."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you handle exceptions in Java Stream operations?",
+    "Answer": "Either wrap checked exceptions in runtime exceptions, use try-catch within lambda expressions, or create wrapper methods that handle exceptions. For cleaner code, you can create utility methods that convert checked exceptions to unchecked ones."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring Data JPA",
+    "Question": "What is the difference between JPA and Spring Data JPA?",
+    "Answer": "JPA is a specification for object-relational mapping in Java, while Spring Data JPA is an abstraction layer on top of JPA that reduces boilerplate code. Spring Data JPA provides repository support, automatic query generation, and simplifies data access operations."
+  },
+  {
+    "Category": "Spring Framework",
+    "Subcategory": "Spring MVC",
+    "Question": "What is the role of the DispatcherServlet in Spring MVC?",
+    "Answer": "DispatcherServlet is the front controller in Spring MVC that receives all incoming requests, delegates to appropriate handlers (controllers), and manages the view resolution process. It coordinates the entire request-processing workflow in a Spring web application."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "What is the difference between findFirst() and findAny() in Streams?",
+    "Answer": "findFirst() returns the first element in encounter order (important for ordered streams), while findAny() returns any element (better for parallel streams as it's less constrained). In sequential streams, they often return the same element, but in parallel streams, findAny() can be more efficient."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you use the reduce() operation in Java Streams?",
+    "Answer": "reduce() combines elements to produce a single value. Examples: stream.reduce(0, (a,b) -> a+b) for sum, or stream.reduce((a,b) -> a+b) for optional result. It takes an identity value, accumulator function, and optionally a combiner for parallel streams."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you filter a list of numbers to get even numbers using Streams?",
+    "Answer": "List<Integer> evenNumbers = numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you convert a list of strings to uppercase using Streams?",
+    "Answer": "List<String> upperCaseNames = names.stream().map(String::toUpperCase).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you convert a List of objects to a Map using Streams?",
+    "Answer": "Map<Long, User> userMap = users.stream().collect(Collectors.toMap(User::getId, Function.identity()));"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you flatten a list of lists into a single list using flatMap?",
+    "Answer": "List<String> allElements = listOfLists.stream().flatMap(List::stream).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you group objects by a property using Streams?",
+    "Answer": "Map<String, List<Employee>> employeesByDept = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you sort objects by multiple fields using Streams?",
+    "Answer": "List<Person> sortedPeople = people.stream().sorted(Comparator.comparing(Person::getLastName).thenComparing(Person::getFirstName)).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you calculate the sum of numbers using reduce?",
+    "Answer": "Optional<Integer> sum = numbers.stream().reduce((a, b) -> a + b); or Integer total = numbers.stream().reduce(0, Integer::sum);"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you find the first element matching a condition using Streams?",
+    "Answer": "Optional<String> firstLongName = names.stream().filter(name -> name.length() > 5).findFirst();"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you get unique elements from a list using Streams?",
+    "Answer": "List<Integer> uniqueNumbers = numbers.stream().distinct().collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you implement pagination using limit and skip in Streams?",
+    "Answer": "List<String> page = items.stream().skip(pageNumber * pageSize).limit(pageSize).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you check if any element matches a condition using Streams?",
+    "Answer": "boolean hasAdmin = users.stream().anyMatch(u -> u.isAdmin()); boolean allActive = users.stream().allMatch(u -> u.isActive()); boolean noEmpty = strings.stream().noneMatch(String::isEmpty);"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you concatenate strings with a delimiter using Streams?",
+    "Answer": "String csv = names.stream().collect(Collectors.joining(\", \"));"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you split elements into two groups based on a predicate using partitioningBy?",
+    "Answer": "Map<Boolean, List<Student>> passingFailing = students.stream().collect(Collectors.partitioningBy(s -> s.getGrade() >= 60));"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you use parallel streams for better performance?",
+    "Answer": "List<String> processedData = largeList.parallelStream().map(this::expensiveOperation).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Streams API",
+    "Question": "How do you use peek for debugging during stream processing?",
+    "Answer": "List<String> result = names.stream().filter(name -> name.startsWith(\\\"A\\\")).peek(System.out::println).map(String::toUpperCase).collect(Collectors.toList());"
+  }
+]
