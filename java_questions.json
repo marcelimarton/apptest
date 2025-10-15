@@ -868,5 +868,47 @@
     "Subcategory": "Streams API",
     "Question": "How do you use peek for debugging during stream processing?",
     "Answer": "List<String> result = names.stream().filter(name -> name.startsWith(\\\"A\\\")).peek(System.out::println).map(String::toUpperCase).collect(Collectors.toList());"
+  },
+  {
+    "Category": "Algorithms",
+    "Subcategory": "Search Algorithms",
+    "Question": "What is binary search?",
+    "Answer": "Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one."
+  },
+  {
+    "Category": "Algorithms",
+    "Subcategory": "Search Algorithms",
+    "Question": "What is the time complexity of binary search?",
+    "Answer": "Binary search has a time complexity of O(log n) in the worst case, where n is the number of elements in the sorted array. This makes it much more efficient than linear search (O(n)) for large datasets."
+  },
+  {
+    "Category": "Algorithms",
+    "Subcategory": "Search Algorithms",
+    "Question": "Can you show a Java example of binary search implementation?",
+    "Answer": "public static int binarySearch(int[] arr, int target) {\n    int left = 0, right = arr.length - 1;\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (arr[mid] == target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}"
+  },
+  {
+    "Category": "Software Design",
+    "Subcategory": "Design Patterns",
+    "Question": "What are the main divisions/categories of design patterns?",
+    "Answer": "Design patterns are primarily divided into three main categories: Creational Patterns (deal with object creation mechanisms), Structural Patterns (deal with object composition and relationships), and Behavioral Patterns (deal with object interaction and responsibility distribution)."
+  },
+  {
+    "Category": "Software Design",
+    "Subcategory": "Design Patterns",
+    "Question": "What are Creational Design Patterns?",
+    "Answer": "Creational patterns provide object creation mechanisms that increase flexibility and reuse of existing code. Examples include: Singleton, Factory Method, Abstract Factory, Builder, and Prototype patterns."
+  },
+  {
+    "Category": "Software Design",
+    "Subcategory": "Design Patterns",
+    "Question": "What are Structural Design Patterns?",
+    "Answer": "Structural patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient. Examples include: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, and Proxy patterns."
+  },
+  {
+    "Category": "Software Design",
+    "Subcategory": "Design Patterns",
+    "Question": "What are Behavioral Design Patterns?",
+    "Answer": "Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. Examples include: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, and Visitor patterns."
   }
 ]
