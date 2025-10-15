@@ -3,7 +3,7 @@
 <head>
     <title>Java Interview Questions - Smart Search</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <style>
         * {
             margin: 0;
@@ -16,11 +16,18 @@
             padding: 15px;
             background: #f5f5f5;
             line-height: 1.4;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
         }
         
         h1 {
@@ -28,22 +35,26 @@
             margin-bottom: 15px;
             color: #333;
             font-size: clamp(1.5rem, 4vw, 2rem);
+            word-wrap: break-word;
         }
         
         .search-container {
             position: relative;
             margin-bottom: 8px;
+            width: 100%;
         }
         
         #search {
             width: 100%;
             padding: 12px 45px 12px 12px;
-            font-size: 16px; /* Better for mobile */
+            font-size: 16px; /* Prevents zoom on iOS */
             border: 2px solid #ddd;
             border-radius: 8px;
             outline: none;
             transition: border-color 0.3s;
             -webkit-appearance: none; /* Remove iOS styling */
+            max-width: 100%;
+            box-sizing: border-box;
         }
         
         #search:focus {
@@ -87,6 +98,7 @@
             margin-bottom: 12px;
             min-height: 35px;
             align-items: center;
+            width: 100%;
         }
         
         .suggestion {
@@ -100,6 +112,8 @@
             color: #1976d2;
             font-weight: 500;
             flex-shrink: 0;
+            max-width: 100%;
+            word-wrap: break-word;
         }
         
         .suggestion:hover {
@@ -123,6 +137,7 @@
             display: grid;
             gap: 8px;
             margin-bottom: 15px;
+            width: 100%;
         }
         
         .question-card {
@@ -133,6 +148,10 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             transition: transform 0.2s;
             break-inside: avoid;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
         
         .question-card:hover {
@@ -144,6 +163,7 @@
             font-size: 11px;
             color: #666;
             margin-bottom: 4px;
+            word-wrap: break-word;
         }
         
         .question {
@@ -152,12 +172,14 @@
             color: #333;
             font-size: 14px;
             line-height: 1.3;
+            word-wrap: break-word;
         }
         
         .answer {
             color: #555;
             line-height: 1.4;
             font-size: 13px;
+            word-wrap: break-word;
         }
         
         .match {
@@ -173,6 +195,8 @@
             margin-bottom: 8px;
             font-size: 13px;
             padding: 0 5px;
+            width: 100%;
+            word-wrap: break-word;
         }
         
         .no-results {
@@ -181,6 +205,7 @@
             font-style: italic;
             padding: 30px 15px;
             font-size: 14px;
+            width: 100%;
         }
         
         #status {
@@ -195,6 +220,8 @@
             font-size: 12px;
             border-top: 2px solid #4CAF50;
             z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .status-success { background: #4CAF50; }
@@ -208,6 +235,8 @@
             margin-bottom: 8px;
             padding: 0 5px;
             line-height: 1.3;
+            width: 100%;
+            word-wrap: break-word;
         }
         
         .suggestions-label {
@@ -216,18 +245,22 @@
             margin-bottom: 6px;
             font-weight: bold;
             padding: 0 2px;
+            width: 100%;
         }
         
         .suggestion-info {
             color: #666;
             font-style: italic;
             font-size: 11px;
+            width: 100%;
+            word-wrap: break-word;
         }
         
         .loading {
             text-align: center;
             padding: 40px 20px;
             color: #666;
+            width: 100%;
         }
         
         .loading-spinner {
@@ -284,6 +317,7 @@
         @media (max-width: 768px) {
             body {
                 padding: 10px;
+                font-size: 18px !important; /* Mobile font size */
             }
             
             h1 {
@@ -310,7 +344,7 @@
             }
             
             .question-card {
-                padding: 10px;
+                padding: 12px !important; /* Mobile padding */
                 border-radius: 5px;
             }
             
@@ -319,12 +353,12 @@
             }
             
             .question {
-                font-size: 13px;
+                font-size: 16px !important; /* Mobile font size */
                 margin-bottom: 5px;
             }
             
             .answer {
-                font-size: 12px;
+                font-size: 14px !important; /* Mobile font size */
             }
             
             #counter, .search-tips {
@@ -343,6 +377,7 @@
         @media (max-width: 480px) {
             body {
                 padding: 8px;
+                font-size: 18px !important;
             }
             
             h1 {
@@ -369,7 +404,7 @@
             }
             
             .question-card {
-                padding: 8px;
+                padding: 12px !important;
             }
             
             #scrollToTopBtn {
@@ -406,6 +441,14 @@
         @media (max-width: 768px) {
             html {
                 -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+            
+            body {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                text-size-adjust: 100%;
             }
         }
         
@@ -420,21 +463,39 @@
             }
         }
         
-        /* Mobile detection styles */
-        .mobile-font-size {
-            font-size: 18px !important;
+        /* Prevent horizontal scrolling */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+                position: relative;
+                width: 100%;
+            }
+            
+            .container {
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            .question-card, #search, .suggestion {
+                max-width: 100%;
+            }
         }
-        
-        .mobile-font-size-medium {
-            font-size: 16px !important;
-        }
-        
-        .mobile-font-size-small {
-            font-size: 14px !important;
-        }
-        
-        .mobile-padding {
-            padding: 12px !important;
+
+        /* iOS specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            #search {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            body {
+                -webkit-user-select: none;
+                user-select: none;
+            }
+            
+            input, textarea {
+                -webkit-user-select: text;
+                user-select: text;
+            }
         }
     </style>
 </head>
