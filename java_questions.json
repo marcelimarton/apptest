@@ -525,7 +525,7 @@
     "Category": "Java 8+",
     "Subcategory": "Stream API - Advanced",
     "Question": "How does the reduce() operation work in Streams?",
-    "Answer": "reduce() combines elements of a stream to produce a single result. There are three variants: 1) Optional<T> reduce(BinaryOperator<T> accumulator) - uses first element as identity, 2) T reduce(T identity, BinaryOperator<T> accumulator) - explicit identity value, 3) U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner) - for parallel streams with different input/output types. Example: list.stream().reduce(0, (a,b) -> a + b) sums integers."
+    "Answer": "reduce() combines elements of a stream to produce a single result. There are three variants: 1) Optional<T> reduce(BinaryOperator<T> accumulator) - uses first element as identity, 2) T reduce(T identity, BinaryOperator<T> accumulator) - explicit identity value, 3) reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator combiner) - for parallel streams with different input/output types. Example: list.stream().reduce(0, (a,b) -> a + b) sums integers."
   },
   {
     "Category": "Java 8+",
