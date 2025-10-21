@@ -910,5 +910,101 @@
     "Subcategory": "Design Patterns",
     "Question": "What are Behavioral Design Patterns?",
     "Answer": "Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. Examples include: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, and Visitor patterns."
+  },
+  {
+    "Category": "Software Concepts",
+    "Subcategory": "API Design",
+    "Question": "What is idempotency in REST APIs?",
+    "Answer": "Idempotency means that making multiple identical requests has the same effect as making a single request. In HTTP, GET, PUT, DELETE are idempotent methods, while POST is not. This is crucial for reliability and retry mechanisms."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Immutability",
+    "Question": "What is immutability and why is it important in Java?",
+    "Answer": "Immutability means an object's state cannot be changed after creation. Benefits include thread-safety, simplicity, and predictability. In Java, use final fields, no setters, and return defensive copies to create immutable objects."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is Apache Kafka and how does it differ from traditional message brokers?",
+    "Answer": "Kafka is a distributed event streaming platform that uses a publish-subscribe model with persistent, partitioned, and replicated logs. Unlike JMS brokers, Kafka retains messages for configurable periods and provides high throughput with horizontal scaling."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "JMS",
+    "Question": "What are the main messaging models in JMS?",
+    "Answer": "JMS supports two messaging models: Point-to-Point (queues) where each message is consumed by one consumer, and Publish-Subscribe (topics) where each message is delivered to all subscribed consumers."
+  },
+  {
+    "Category": "Concurrency",
+    "Subcategory": "Processes and Threads",
+    "Question": "What is the difference between a process and a thread?",
+    "Answer": "A process is an independent execution environment with its own memory space, while threads are lightweight and share the same memory space within a process. Threads are cheaper to create but require synchronization for shared data access."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Records",
+    "Question": "What are Java Records and when should they be used?",
+    "Answer": "Records are immutable data carriers that automatically generate constructor, getters, equals(), hashCode(), and toString(). Use them for DTOs, value objects, and any data-focused classes where immutability is desired."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Sealed Classes",
+    "Question": "What are sealed classes in Java and what problem do they solve?",
+    "Answer": "Sealed classes restrict which other classes may extend or implement them. They provide exhaustive pattern matching in switch expressions and enable controlled inheritance hierarchies, improving code safety and maintainability."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Structured Concurrency",
+    "Question": "What is structured concurrency in Java?",
+    "Answer": "Structured concurrency treats groups of related tasks running in different threads as a single unit of work. If one task fails, all others are cancelled, preventing thread leakage and making concurrent code easier to reason about."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Virtual Threads",
+    "Question": "What are virtual threads in Java and how do they differ from platform threads?",
+    "Answer": "Virtual threads are lightweight threads managed by the JVM rather than the OS. They have minimal memory overhead (∼2KB vs 1MB for platform threads) and are designed for high-throughput concurrent applications with many blocking operations."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are Kafka topics and partitions?",
+    "Answer": "Topics are categories/feeds to which records are published. Partitions are subdivisions of topics that allow parallel processing. Each partition is an ordered, immutable sequence of records that can be distributed across multiple brokers."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Records",
+    "Question": "Can Java Records have additional methods and constructors?",
+    "Answer": "Yes, records can have compact constructors for validation, static methods, instance methods, and static fields. However, they cannot have instance fields outside the record header, maintaining their data carrier purpose."
+  },
+  {
+    "Category": "Concurrency",
+    "Subcategory": "Virtual Threads",
+    "Question": "How do virtual threads improve application performance?",
+    "Answer": "Virtual threads don't make code faster but enable higher throughput by efficiently handling blocking operations. They allow creating millions of threads without exhausting system resources, ideal for I/O-bound applications."
+  },
+  {
+    "Category": "Software Concepts",
+    "Subcategory": "Idempotency",
+    "Question": "How can you implement idempotency in a REST API?",
+    "Answer": "Use idempotency keys in request headers, check for duplicate requests, implement optimistic locking with version numbers, or use conditional requests with ETags. Store request outcomes to return same response for duplicate calls."
+  },
+  {
+    "Category": "Java",
+    "Subcategory": "Sealed Classes",
+    "Question": "How do you define a sealed class in Java?",
+    "Answer": "Use the 'sealed' modifier and 'permits' clause: 'public sealed class Shape permits Circle, Rectangle, Triangle'. All permitted subclasses must be final, sealed, or non-sealed and in the same module/package."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "JMS",
+    "Question": "What is the difference between JMS 1.1 and JMS 2.0?",
+    "Answer": "JMS 2.0 introduced simplified API with JMSContext, automatic connection and session management, delivery delay, asynchronous send, and shared subscriptions. It reduces boilerplate code while maintaining backward compatibility."
+  },
+  {
+    "Category": "Concurrency",
+    "Subcategory": "Structured Concurrency",
+    "Question": "How is structured concurrency implemented in Java?",
+    "Answer": "Using StructuredTaskScope in java.util.concurrent. Tasks are created as subtasks and the scope ensures all subtasks complete before the main task. If any subtask fails, all others are automatically cancelled."
   }
 ]
