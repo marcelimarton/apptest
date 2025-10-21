@@ -1126,5 +1126,131 @@
     "Subcategory": "Hibernate",
     "Question": "What are the advantages of using JPA over native Hibernate?",
     "Answer": "JPA provides standardization across different ORM providers, vendor independence, and integration with Java EE/Jakarta EE. However, Hibernate offers additional features like extra annotations, criteria API extensions, and more caching options."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is a Dead Letter Queue (DLQ) in Kafka and when is it used?",
+    "Answer": "A DLQ is a special topic where messages that cannot be processed successfully are sent after multiple retries. It's used for handling poison pill messages, allowing problematic messages to be isolated for later analysis without blocking the main processing flow."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How can you implement a Dead Letter Queue pattern in Kafka?",
+    "Answer": "Implement DLQ by configuring a Kafka consumer to catch processing exceptions, track retry attempts, and after max retries, produce the failed message to a dedicated DLQ topic. Use headers to store retry count and failure reason for debugging."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is Kafka Connect and what are its main use cases?",
+    "Answer": "Kafka Connect is a framework for streaming data between Kafka and other systems. It simplifies data import/export with pre-built connectors for databases (JDBC), cloud services, file systems, and messaging systems, supporting both source and sink connectors."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are consumer groups in Kafka and how do they work?",
+    "Answer": "Consumer groups allow multiple consumers to work together to consume messages from topics. Each partition is consumed by only one consumer in the group, enabling parallel processing. Rebalancing occurs when consumers join or leave the group."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is the difference between Kafka replication factor and partitions?",
+    "Answer": "Partitions enable parallelism and scaling by splitting topics, while replication factor provides fault tolerance by creating copies of partitions across brokers. RF=3 means each partition has 3 copies (1 leader + 2 followers)."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How does Kafka ensure message ordering and when can it be lost?",
+    "Answer": "Kafka guarantees ordering only within a partition. Messages are ordered by offset in each partition. Ordering can be lost when using multiple partitions or during consumer rebalancing unless using a single partition or custom partitioning strategy."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is log compaction in Kafka and when should it be used?",
+    "Answer": "Log compaction retains only the latest value for each key, removing older updates. It's useful for changelog data, database replication, or when you need the current state rather than full history, saving storage space."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are Kafka Streams and how do they differ from consumer/producer APIs?",
+    "Answer": "Kafka Streams is a client library for building real-time streaming applications. Unlike basic consumers/producers, it provides stream processing capabilities like transformations, aggregations, joins, and stateful operations with exactly-once semantics."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is the role of ZooKeeper in Kafka and is it still required?",
+    "Answer": "ZooKeeper was used for cluster coordination, leader election, and metadata management. Since Kafka 3.0+, ZooKeeper is being phased out in favor of Kafka's self-managed metadata quorum (KRaft mode), simplifying deployment and operations."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are the different message delivery semantics in Kafka?",
+    "Answer": "At-most-once (messages may be lost), At-least-once (messages may be duplicated), and Exactly-once (each message processed once). Exactly-once requires idempotent producers, transactional writes, and read-committed isolation level."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How do you handle schema evolution in Kafka?",
+    "Answer": "Use Schema Registry with Avro, Protobuf, or JSON Schema. Schema Registry manages schema compatibility (forward/backward/full), validates schema changes, and allows evolution without breaking consumers through compatible schema updates."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is a tombstone message in Kafka and when is it used?",
+    "Answer": "A tombstone is a message with null value and a key. It's used in log-compacted topics to mark a key for deletion. During compaction, messages with null values are removed, effectively deleting the key from the topic."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How can you monitor and manage Kafka consumer lag?",
+    "Answer": "Monitor consumer lag (difference between latest offset and consumer offset) using Kafka tools (kafka-consumer-groups), JMX metrics, or monitoring systems. High lag indicates consumers can't keep up with producers and may need scaling or optimization."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are Kafka interceptors and what are they used for?",
+    "Answer": "Interceptors allow custom logic to be executed during message production/consumption. Use cases include monitoring, auditing, message enrichment, header manipulation, and tracing. Implement ProducerInterceptor or ConsumerInterceptor interfaces."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How does Kafka handle message retention and cleanup?",
+    "Answer": "Kafka retains messages based on time (retention.ms) or size (retention.bytes). Cleanup can be delete-based (removes old segments) or compact-based (keeps latest value per key). Policies are configurable per topic."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is the difference between Kafka transactions and idempotent producers?",
+    "Answer": "Idempotent producers prevent duplicates within a single producer session. Transactions enable atomic writes across multiple partitions and topics, supporting exactly-once semantics across consumer-producer workflows with commit/abort capabilities."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How do you secure a Kafka cluster?",
+    "Answer": "Use SSL/TLS for encryption, SASL for authentication (GSSAPI, PLAIN, SCRAM), ACLs for authorization, and secure ZooKeeper. Implement network segmentation, monitor with security tools, and regularly audit access patterns and configurations."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What are Kafka quotas and why are they important?",
+    "Answer": "Quotas limit the bandwidth used by clients (producers/consumers) to prevent any single client from overwhelming the cluster. They ensure fair resource sharing and protect against misbehaving or malicious clients affecting overall cluster performance."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "How can you achieve exactly-once processing in Kafka Streams?",
+    "Answer": "Enable exactly-once by setting processing.guarantee='exactly_once_v2' in Kafka Streams configuration. This uses transactional producers, idempotent writes, and read-committed isolation to ensure each input record is processed exactly once despite failures."
+  },
+  {
+    "Category": "Messaging",
+    "Subcategory": "Kafka",
+    "Question": "What is the purpose of Kafka's __consumer_offsets topic?",
+    "Answer": "__consumer_offsets is an internal compacted topic that stores consumer group offset commit information. It tracks the current read position for each partition in consumer groups, enabling consumers to resume from where they left off after restarts."
+  },
+  {
+    "Category": "API",
+    "Subcategory": "Patterns",
+    "Question": "What is gateway orchestration?",
+    "Answer": "Gateway orchestration is the use of an API gateway or other central service to coordinate multiple microservices and back-end systems to fulfill a single, complex request. Acting as a conductor, the orchestrator manages the sequence, dependencies, and data flow between different APIs to automate complex workflows and simplify interactions for the client. \nHow gateway orchestration works\nIn a typical microservices architecture without orchestration, a single client request might require multiple separate calls to different services. With gateway orchestration, the process is streamlined behind a single entry point: \n    Client request: A client, such as a mobile app, sends a single API call to the gateway requesting a complex function, like processing a customer's order.\n    Workflow decomposition: The gateway receives the request and breaks it down into a series of smaller, sequential tasks.\n    Service coordination: The orchestrator module within the gateway makes calls to various back-end microservices and other systems in the correct order. For an e-commerce order, this could involve:\n        Checking inventory.\n        Processing the payment.\n        Creating an order record.\n        Scheduling shipping.\n    Data aggregation: The gateway collects the data from each back-end service, transforms it if necessary, and aggregates it into a single, unified response.\n    Single client response: The gateway sends this final, comprehensive response back to the client, which is unaware of the complex, multi-step process that happened behind the scenes. \nKey benefits of gateway orchestration \n   Reduced client complexity: Clients interact with a single API endpoint instead of needing to know about and manage calls to multiple back-end services. This simplifies the client-side code and development process.\n   Improved performance: Orchestration can reduce latency by minimizing the chattiness between the client and services. Instead of multiple round trips, the client performs just one request-response cycle with the gateway.\n   Centralized control and security: Security policies, authentication, authorization, and rate-limiting can be enforced uniformly at the gateway level. This provides a central point of governance, ensuring consistent security across all services.\n   Enhanced resilience: The orchestrator can be designed to handle errors and implement automated failover logic. If one back-end service fails, it can retry the request or route it to a backup, improving reliability.\n   Seamless integration: It allows for easy integration of new or existing legacy systems without affecting the client. The orchestration layer can normalize data and handle protocol conversions between different API types.\n   Optimized business processes: For complex, multi-step business workflows, orchestration ensures that each step is executed in the correct sequence, with robust error handling and tracking. \nGateway orchestration versus API composition\nWhile often used interchangeably, there is a technical distinction: \n    Orchestration (centralized): A central orchestrator service manages the entire workflow and calls back-end services sequentially based on predefined logic. The orchestrator is aware of the overall business process.\n    Choreography (decentralized): Services interact with each other in a decentralized manner, often by reacting to events published by other services. There is no central controller, and each service independently knows its role. \nMany modern API gateways offer built-in functionality to perform orchestration, and for more complex workflows, they can be integrated with dedicated workflow engines. "
   }
 ]
