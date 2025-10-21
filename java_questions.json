@@ -1006,5 +1006,125 @@
     "Subcategory": "Structured Concurrency",
     "Question": "How is structured concurrency implemented in Java?",
     "Answer": "Using StructuredTaskScope in java.util.concurrent. Tasks are created as subtasks and the scope ensures all subtasks complete before the main task. If any subtask fails, all others are automatically cancelled."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "What is JDBC and what are its main components?",
+    "Answer": "JDBC (Java Database Connectivity) is a Java API for connecting and executing queries on databases. Main components include: DriverManager, Connection, Statement, PreparedStatement, CallableStatement, and ResultSet."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "What is the difference between Statement and PreparedStatement?",
+    "Answer": "Statement executes static SQL queries, while PreparedStatement executes parameterized SQL queries with better performance (pre-compiled) and protection against SQL injection. PreparedStatement should be used for queries with parameters."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "How do you handle transactions in JDBC?",
+    "Answer": "Use connection.setAutoCommit(false) to manually control transactions, then connection.commit() to save changes or connection.rollback() to undo them. Always use try-with-resources or finally blocks to ensure proper cleanup."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "What is JDBC Connection pooling and why is it important?",
+    "Answer": "Connection pooling maintains a cache of database connections that can be reused. It improves performance by avoiding the overhead of creating new connections for each request and helps manage database resources efficiently."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is Hibernate and how does it differ from JDBC?",
+    "Answer": "Hibernate is an ORM (Object-Relational Mapping) framework that maps Java objects to database tables. Unlike JDBC which works with SQL and ResultSets, Hibernate provides object-oriented querying, caching, and automatic transaction management."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is the Hibernate SessionFactory and why is it important?",
+    "Answer": "SessionFactory is a thread-safe, immutable cache of compiled mappings for a single database. It's expensive to create, so typically one is created per application, and it's used to create Session instances for database operations."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is the difference between get() and load() methods in Hibernate?",
+    "Answer": "get() immediately hits the database and returns null if object not found. load() returns a proxy and only hits database when accessed, throwing ObjectNotFoundException if object doesn't exist. Use get() when existence is uncertain."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What are the different states of an object in Hibernate?",
+    "Answer": "Transient (new instance, not associated with session), Persistent (associated with session, in database), Detached (previously persistent, session closed), and Removed (scheduled for deletion)."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is lazy loading in Hibernate and when should it be used?",
+    "Answer": "Lazy loading defers association loading until accessed. It improves performance by loading only needed data. Use for large associations that might not always be needed. Configure with fetch = FetchType.LAZY on @OneToMany or @ManyToMany."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is the N+1 select problem in Hibernate and how can it be avoided?",
+    "Answer": "N+1 problem occurs when loading entities with lazy associations: 1 query for parent + N queries for children. Avoid using JOIN FETCH in HQL, @EntityGraph, or @Fetch(FetchMode.JOIN) to load associations in single query."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is Hibernate caching and what are its levels?",
+    "Answer": "Hibernate caching improves performance by storing frequently accessed data. First-level cache (session-scoped, enabled by default), Second-level cache (session factory-scoped, needs configuration), and Query cache (caches query results)."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "How do you prevent SQL injection in JDBC?",
+    "Answer": "Always use PreparedStatement with parameterized queries instead of concatenating strings. PreparedStatement automatically escapes special characters and separates SQL logic from data, preventing malicious SQL execution."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is the difference between Hibernate's save() and persist() methods?",
+    "Answer": "save() returns the generated identifier immediately and can be called outside transaction. persist() doesn't guarantee immediate identifier return and must be called within transaction. persist() is more JPA-compliant."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What are Hibernate interceptors and what are they used for?",
+    "Answer": "Interceptors allow custom logic during CRUD operations. They can be used for auditing (tracking create/update times), logging, data validation, or modifying entities before persistence. Implement the EmptyInterceptor class."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "What is a JDBC Driver and what are the different types?",
+    "Answer": "JDBC Driver is a software component enabling Java application to interact with database. Types: Type 1 (JDBC-ODBC bridge), Type 2 (Native API), Type 3 (Network Protocol), Type 4 (Thin Driver - most common, pure Java)."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is HQL (Hibernate Query Language) and how does it differ from SQL?",
+    "Answer": "HQL is Hibernate's object-oriented query language that works with persistent objects and properties rather than database tables and columns. It's database-agnostic and supports polymorphism, joins, and aggregation similar to SQL."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is dirty checking in Hibernate?",
+    "Answer": "Dirty checking is Hibernate's automatic detection of changes in persistent objects. During flush, Hibernate compares current object state with original snapshot and generates UPDATE statements only for changed fields, optimizing database writes."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "JDBC",
+    "Question": "How do you handle database connections properly in JDBC?",
+    "Answer": "Use try-with-resources (Java 7+) to automatically close connections: try (Connection conn = dataSource.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) { ... }. This ensures resources are closed even if exceptions occur."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What is the purpose of Hibernate's @Version annotation?",
+    "Answer": "@Version enables optimistic locking by adding a version column. Hibernate automatically increments the version on updates and checks it during flush. If versions don't match, OptimisticLockException is thrown, preventing lost updates."
+  },
+  {
+    "Category": "Java Persistence",
+    "Subcategory": "Hibernate",
+    "Question": "What are the advantages of using JPA over native Hibernate?",
+    "Answer": "JPA provides standardization across different ORM providers, vendor independence, and integration with Java EE/Jakarta EE. However, Hibernate offers additional features like extra annotations, criteria API extensions, and more caching options."
   }
 ]
